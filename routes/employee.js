@@ -2,7 +2,10 @@ var MongoClient = require('mongodb').MongoClient,
     Server = require('mongodb').Server,
     db;
 
-var mongoClient = new MongoClient(new Server('localhost', 27017));
+var ip_addr = process.env.OPENSHIFT_MONGODB_DB_HOST   || '127.0.0.1';
+var port    = process.env.OPENSHIFT_MONGODB_DB_PORT || '27017';
+
+var mongoClient = new MongoClient(new Server(ip_addr, port));
 mongoClient.open(function(err, mongoClient) {
     db = mongoClient.db("employeedb09");
     db.collection('employees', {strict:true}, function(err, collection) {
