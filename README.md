@@ -5,6 +5,3 @@ acme
 
 test
 
-test
-
-test
