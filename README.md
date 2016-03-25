@@ -1,7 +1,5 @@
 acme
 ====
 
-acme
-
-test
+Test 1
 
